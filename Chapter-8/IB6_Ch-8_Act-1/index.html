@@ -1,0 +1,285 @@
+<html>
+<head>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="items/https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="items/https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="items/https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<style>
+body {
+background-image:url('../img/yellow.jpg');
+}
+.container{
+margin-top:20px;
+padding:20px;
+margin-bottom:50px;
+font-family: 'Mukta', sans-serif;
+background: #00A19A;
+background-position:center;
+box-shadow: 5px 5px 5px #086763;
+border: 2px solid #0ca09a;
+border-radius:100px 0px 100px;
+width:90%;
+}
+h2,h3{
+padding:20px;
+background-image:url('../img/yellow.jpg');
+width:80%;
+font-weight:bold;
+box-shadow: inset 0px 0px 10px rgba(0,0,0,0.8);
+margin-top:20px;
+text-shadow:1px 1px 2px #111;
+border-radius:30px 0px 30px;
+text-align:center;
+}
+
+
+select{
+margin-top:20px;
+}
+.row{
+font-size:18px;
+ font-weight: 450;
+}
+#block {
+  opacity:0;
+  transition:opacity 1s ease-in;*
+    -webkit-transition: opacity 1s  ease-in;
+       -moz-transition: opacity 1s  ease-in;
+         -o-transition: opacity 1s  ease-in;
+}
+#block.show {
+  opacity:1;
+}
+
+
+#block {
+    opacity: 0;
+}
+#blocks {
+  opacity:0;
+  transition:opacity 1s ease-in;*
+    -webkit-transition: opacity 1s  ease-in;
+       -moz-transition: opacity 1s  ease-in;
+         -o-transition: opacity 1s  ease-in;
+}
+#blocks.show {
+  opacity:1;
+}
+
+#blocks {
+    opacity: 0;
+}
+.block {
+    display: block;
+    width: 60%;
+    border: none;
+    background-color: #ffffff8f;
+	font-family:Comic Sans, Comic Sans MS, cursive;
+    padding: 14px 28px;
+	border-radius:20px;
+	margin-top:10px;
+	border:2px solid #ef7cc7; 
+	box-shadow:2px 2px 2px #f5f;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;
+}
+.hidden{
+display:none;
+}
+select{
+font-size:22px;
+width:95%;
+border-radius:15px;
+border: 2px solid #FCB424;
+background:#fbe99d;
+font-family:Roboto;
+}
+h4{
+color:white;
+font-weight:bold;
+}
+.col-md-12{
+
+}
+</style>
+</head>
+<body>
+<div id="block" class="container tab1">
+<center>
+<h3 style="font-size:24px;">Adaptation of plants and animals in desert habitat</h3>
+
+<h2 style="font-size:22px; width:90%;">Choose the correct options from the box and label the camel.</h2>
+</center>
+<br>
+
+	<div class="row">
+	<div class="col-md-12">
+		<center>
+		<img src="audio/1.png" class="cor" style="width:90%; height:auto;">
+		<img src="audio/2.png" class="wor hidden" style="width:90%; height:auto;">
+		</center>
+	</div>
+	<div class="col-md-12">
+		<center>
+		<div class="row"    >
+		<div class="col-sm-12">
+		1. &nbsp;&nbsp; <select id="a1"></select>
+		</div>
+		</div>
+		<hr>
+		<div class="row"    >
+		<div class="col-sm-12">
+		2. &nbsp;&nbsp; <select id="a2"></select>
+		</div>
+		</div>
+		<hr>
+		<div class="row"    >
+		<div class="col-sm-12">
+		3. &nbsp;&nbsp; <select id="a3"></select>
+		</div>
+		</div>
+		<hr>
+		<div class="row"    >
+		<div class="col-sm-12">
+		4. &nbsp;&nbsp;	<select id="a4"></select> 
+		</div>
+		</div>
+		<hr>
+		<div class="row"    >
+		<div class="col-sm-12">
+		5. &nbsp;&nbsp; <select id="a5"></select> 
+		</div>
+		</div>
+		<hr>
+		<div class="row"    >
+		<div class="col-sm-12">
+		6. &nbsp;&nbsp;	<select id="a6"></select> 
+		</div>
+		</div>
+		<hr>
+		<div class="row"    >
+		<div class="col-sm-12">
+		7. &nbsp;&nbsp; <select id="a7"></select> 
+		</div>
+		</div>
+	<hr>
+	</center>
+	</div>
+	</div>
+	
+	
+	<div class="row">
+		<div class="col-md-4"><center><img id="" onclick="window.location.reload()" src="../img/res2.png" onmouseover="this.src='../img/res1.png'" onmouseout="this.src='../img/res2.png'" style="margin-top:10px; width:60%;"></center></div>
+		<div class="col-md-4"><center><img id="submit" onclick="check()" src="../img/sub2.png" onmouseover="this.src='../img/sub1.png'" onmouseout="this.src='../img/sub2.png'" style="margin-top:10px; width:60%;"></center></div>
+		<div class="col-md-4"><center><img id="sol" disabled onclick="solve()" src="../img/solu2.png" onmouseover="this.src='../img/solu1.png'" onmouseout="this.src='../img/solu2.png'" style="margin-top:10px; width:60%;"></center></div>
+	</div>
+	
+	
+</div>
+
+
+<div id="blocks" class="">
+	<img   height="auto" width="100%"  src="../img/Welldone.gif">
+</div>
+
+<audio id="audio2" src="../audio/try-again.mp3"></audio>
+<audio id="audio1" src="../audio/well-done.mp3"></audio>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+function check() {
+ var a1 = document.getElementById("a1");
+ var a2 = document.getElementById("a2");
+ var a3 = document.getElementById("a3");
+ var a4 = document.getElementById("a4");
+ var a5 = document.getElementById("a5");
+ var a6 = document.getElementById("a6");
+ var a7 = document.getElementById("a7");
+ 
+var ans1= a1.options[a1.selectedIndex].text;
+var ans2= a2.options[a2.selectedIndex].text;
+var ans3= a3.options[a3.selectedIndex].text;
+var ans4= a4.options[a4.selectedIndex].text;
+var ans5= a5.options[a5.selectedIndex].text;
+var ans6= a6.options[a6.selectedIndex].text;
+var ans7= a7.options[a7.selectedIndex].text;
+
+
+if(ans1!="Long eyelashes help to keep sand out of eyes"){
+$('#a1').css("border",'2px solid red');
+}
+if(ans2!="Closed nostrils keep out the sand"){
+$('#a2').css("border",'2px solid red');
+}
+if(ans3!="Leathery mouth help the camel to cut spiky plants"){
+$('#a3').css("border",'2px solid red');
+}
+if(ans4!="Long legs keep the camel off the hot sand and help to keep cool"){
+$('#a4').css("border",'2px solid red');
+}
+if(ans5!="Padded feet stop sinking into the sand and to protect from heat of the ground"){
+$('#a5').css("border",'2px solid red');
+}
+if(ans6!="Hump for storing food for future use"){
+$('#a6').css("border",'2px solid red');
+}
+if(ans7!="Hair on back to protect from the hot sun rays"){
+$('#a7').css("border",'2px solid red');
+}
+
+$("#sol").css("pointer-events", "auto");
+ if(ans1=="" && ans2=="" && ans3=="" && ans4=="" && ans5=="" && ans6=="" && ans7=="" ){
+$("#sol").css("pointer-events", "none");
+ }
+ 
+if(ans1=="Long eyelashes help to keep sand out of eyes" && ans2=="Closed nostrils keep out the sand" && ans3=="Leathery mouth help the camel to cut spiky plants" && ans4=="Long legs keep the camel off the hot sand and help to keep cool"  && ans5=="Padded feet stop sinking into the sand and to protect from heat of the ground" && ans6=="Hump for storing food for future use"  && ans7=="Hair on back to protect from the hot sun rays" ){
+  var audio = document.getElementById("audio1");
+		audio.play();
+		var $block = $("#block");
+		$block.toggleClass('show');
+		var $blocks = $("#blocks");
+		$blocks.toggleClass('show');
+		setInterval(function(){ $('#block').addClass('hidden'); 
+		},1000);
+		setInterval(function(){ 
+		window.location="../index.html";
+		},3000);
+     } 
+	else{
+	var audio = document.getElementById("audio2");
+       audio.play();
+	}    
+}
+window.onload = function(e){ 
+	var $block = $("#block");
+	$block.toggleClass('show');
+	$("#sol").css("pointer-events", "none");
+    $('#a1').append("<option selected disabled>     </option><option>Hump for storing food for future use</option><option>Hair on back to protect from the hot sun rays</option><option>Padded feet stop sinking into the sand and to protect from heat of the ground</option><option>Long eyelashes help to keep sand out of eyes</option><option>Leathery mouth help the camel to cut spiky plants</option><option>Closed nostrils keep out the sand</option><option>Long legs keep the camel off the hot sand and help to keep cool</option>");
+    $('#a2').append("<option selected disabled>     </option><option>Hump for storing food for future use</option><option>Hair on back to protect from the hot sun rays</option><option>Padded feet stop sinking into the sand and to protect from heat of the ground</option><option>Long eyelashes help to keep sand out of eyes</option><option>Leathery mouth help the camel to cut spiky plants</option><option>Closed nostrils keep out the sand</option><option>Long legs keep the camel off the hot sand and help to keep cool</option>");
+    $('#a3').append("<option selected disabled>     </option><option>Hump for storing food for future use</option><option>Hair on back to protect from the hot sun rays</option><option>Padded feet stop sinking into the sand and to protect from heat of the ground</option><option>Long eyelashes help to keep sand out of eyes</option><option>Leathery mouth help the camel to cut spiky plants</option><option>Closed nostrils keep out the sand</option><option>Long legs keep the camel off the hot sand and help to keep cool</option>");
+    $('#a4').append("<option selected disabled>     </option><option>Hump for storing food for future use</option><option>Hair on back to protect from the hot sun rays</option><option>Padded feet stop sinking into the sand and to protect from heat of the ground</option><option>Long eyelashes help to keep sand out of eyes</option><option>Leathery mouth help the camel to cut spiky plants</option><option>Closed nostrils keep out the sand</option><option>Long legs keep the camel off the hot sand and help to keep cool</option>");
+    $('#a5').append("<option selected disabled>     </option><option>Hump for storing food for future use</option><option>Hair on back to protect from the hot sun rays</option><option>Padded feet stop sinking into the sand and to protect from heat of the ground</option><option>Long eyelashes help to keep sand out of eyes</option><option>Leathery mouth help the camel to cut spiky plants</option><option>Closed nostrils keep out the sand</option><option>Long legs keep the camel off the hot sand and help to keep cool</option>");
+    $('#a6').append("<option selected disabled>     </option><option>Hump for storing food for future use</option><option>Hair on back to protect from the hot sun rays</option><option>Padded feet stop sinking into the sand and to protect from heat of the ground</option><option>Long eyelashes help to keep sand out of eyes</option><option>Leathery mouth help the camel to cut spiky plants</option><option>Closed nostrils keep out the sand</option><option>Long legs keep the camel off the hot sand and help to keep cool</option>");
+    $('#a7').append("<option selected disabled>     </option><option>Hump for storing food for future use</option><option>Hair on back to protect from the hot sun rays</option><option>Padded feet stop sinking into the sand and to protect from heat of the ground</option><option>Long eyelashes help to keep sand out of eyes</option><option>Leathery mouth help the camel to cut spiky plants</option><option>Closed nostrils keep out the sand</option><option>Long legs keep the camel off the hot sand and help to keep cool</option>");
+}
+
+function solve() {
+$('select').css("border",'2px solid green');
+$("#submit").css("pointer-events", "none");
+$('.cor').addClass('hidden');
+$('.wor').removeClass('hidden');
+$('#a1').val('Long eyelashes help to keep sand out of eyes');
+$('#a2').val('Closed nostrils keep out the sand');
+$('#a3').val('Leathery mouth help the camel to cut spiky plants');
+$('#a4').val('Long legs keep the camel off the hot sand and help to keep cool');
+$('#a5').val('Padded feet stop sinking into the sand and to protect from heat of the ground');
+$('#a6').val('Hump for storing food for future use');
+$('#a7').val('Hair on back to protect from the hot sun rays');
+}
+</script>
+
+
+</body>
+</html>

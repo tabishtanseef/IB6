@@ -1,0 +1,254 @@
+<html>
+<head>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="items/https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="items/https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="items/https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<style>
+body{
+background-image:url('../img/yellow.jpg');
+background-attachment:fixed;
+background-position:center;
+}
+h2{
+padding:10px;
+width:73%;
+margin-top:10px;
+text-align:center;
+border:2px solid #156976;
+border-radius:20px;
+padding:20px;
+background-image: linear-gradient(#8FD5F4, #3EC0D6);
+font-family:DIMBO;
+}
+h3{
+font-family:DIMBO;
+margin-top:50px;
+width:80%;
+border:2px solid #156976;
+border-radius:20px;
+padding:40px;
+background-image: linear-gradient(#8FD5F4, #3EC0D6);
+padding:10px;
+font-weight:bold;
+}
+.row{
+font-size:20px;
+background-image: linear-gradient(#b0e7ff, #8FD5F4);
+padding:25px;
+ font-weight: bold;
+ line-height:30px;
+}
+#block {
+  opacity:0;
+  transition:opacity 1s ease-in;*
+    -webkit-transition: opacity 1s  ease-in;
+       -moz-transition: opacity 1s  ease-in;
+         -o-transition: opacity 1s  ease-in;
+}
+#block.show {
+  opacity:1;
+}
+
+#block {
+    opacity: 0;
+}
+#blocks {
+  opacity:0;
+  transition:opacity 1s ease-in;*
+    -webkit-transition: opacity 1s  ease-in;
+       -moz-transition: opacity 1s  ease-in;
+         -o-transition: opacity 1s  ease-in;
+}
+#blocks.show {
+  opacity:1;
+}
+
+
+#blocks {
+    opacity: 0;
+}
+.block {
+    display: block;
+    width: 60%;
+    border: none;
+    background-color: #ffffff8f;
+	font-family:Comic Sans, Comic Sans MS, cursive;
+    padding: 14px 28px;
+	border-radius:20px;
+	margin-top:10px;
+	border:2px solid #ef7cc7; 
+	box-shadow:2px 2px 2px #f5f;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;
+}
+.hidden{
+display:none;
+}
+.tab1{
+width:90% ;
+outline-radius:20px;
+padding:40px;
+outline: 2px dashed white;
+outline-offset: -15px;
+
+background-image: linear-gradient(#3EC0D6, #8FD5F4);
+}
+select{
+border-radius:20px;
+border: 2px solid #FCB424;
+background:#fbe99d;
+font-family:Roboto;
+}
+option{
+text-align:center;
+background:transparent;
+}
+.col-md-4{
+text-align:center;
+}
+</style>
+</head>
+<body>
+<div id="block" >
+<center>
+<h2>Respiratory diseases and their prevention</h2>
+</center>
+<br>
+
+<div class="container tab1">
+	<center><h3 style="background-color:#ffffff9f; margin-bottom:10px; margin-top:10px;">Choose the correct disease name for each feature.</h3></center>
+	<br>
+	<br>
+	<div class="row"    >
+	<div class="col-md-8">
+	1. &nbsp;&nbsp; It is a disease in which the tubes in the lungs become narrow.
+	</div>
+	<div class="col-md-4">
+	<select id="a1"></select>
+	</div>
+	</div>
+	
+	<div class="row"    >
+	<div class="col-md-8">
+	2. &nbsp;&nbsp; In this the tissues in the lungs become irritated and more mucous is produced in the respiratory tract.
+	</div>
+	<div class="col-md-4">
+	<select id="a2"></select>
+	</div>
+	</div>
+	
+	<div class="row"    >
+	<div class="col-md-8">
+	3. &nbsp;&nbsp; It has symptoms like fever, shivering, cough and stuffy nose.
+	</div>
+	<div class="col-md-4">
+	<select id="a3"></select>
+	</div>
+	</div>
+	
+	<div class="row"    >
+	<div class="col-md-8">
+	4. &nbsp;&nbsp; It is a disease caused by a bacterial infection.
+	</div>
+	<div class="col-md-4">
+	<select id="a4"></select>
+	</div>
+	</div>
+	
+	
+	<div class="row">
+		<div class="col-md-4"><center><img id="" onclick="window.location.reload()" src="../img/res2.png" onmouseover="this.src='../img/res1.png'" onmouseout="this.src='../img/res2.png'" style="margin-top:10px; width:60%;"></center></div>
+		<div class="col-md-4"><center><img id="submit" onclick="check()" src="../img/sub2.png" onmouseover="this.src='../img/sub1.png'" onmouseout="this.src='../img/sub2.png'" style="margin-top:10px; width:60%;"></center></div>
+		<div class="col-md-4"><center><img id="sol" disabled onclick="solve()" src="../img/solu2.png" onmouseover="this.src='../img/solu1.png'" onmouseout="this.src='../img/solu2.png'" style="margin-top:10px; width:60%;"></center></div>
+	</div>
+	
+</div>
+</div>
+
+
+
+<div id="blocks">
+	<img   height="auto" width="100%"  src="../img/Welldone.gif">
+</div>
+
+<audio id="audio2" src="../audio/try-again.mp3"></audio>
+<audio id="audio1" src="../audio/well-done.mp3"></audio>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function load(){
+    var $block = $("#block");
+	$block.toggleClass('show');
+	$("#sol").css("pointer-events", "none");
+});
+
+function check() {
+
+ var a1 = document.getElementById("a1");
+ var a2 = document.getElementById("a2");
+ var a3 = document.getElementById("a3");
+ var a4 = document.getElementById("a4");
+ 
+var ans1= a1.options[a1.selectedIndex].text;
+var ans2= a2.options[a2.selectedIndex].text;
+var ans3= a3.options[a3.selectedIndex].text;
+var ans4= a4.options[a4.selectedIndex].text;
+
+$("#sol").css("pointer-events", "auto");
+ if(ans1=="" && ans2=="" && ans3=="" && ans4==""  ){
+$("#sol").css("pointer-events", "none");
+ }
+
+if(ans1!="Asthma"){
+$('#a1').css("border",'2px solid red');
+}
+if(ans2!="Bronchitis"){
+$('#a2').css("border",'2px solid red');
+}
+if(ans3!="Pneumonia"){
+$('#a3').css("border",'2px solid red');
+}
+if(ans4!="Tuberculosis"){
+$('#a4').css("border",'2px solid red');
+}
+	if(ans1=="Asthma" && ans2=="Bronchitis" && ans3=="Pneumonia" && ans4=="Tuberculosis"  ){
+		var audio = document.getElementById("audio1");
+		audio.play();
+		var $block = $("#block");
+		$block.toggleClass('show');
+		var $blocks = $("#blocks");
+		$blocks.toggleClass('show');
+		setInterval(function(){ $('#block').addClass('hidden'); 
+		},300);
+		setInterval(function(){ 
+		window.location="../index.html";
+		},3000);
+    } 
+	else{
+		var audio = document.getElementById("audio2");
+		audio.play();
+	}   
+}
+window.onload = function(e){ 
+    $('#a1').append("<option selected disabled>     </option><option>Bronchitis</option><option>Tuberculosis</option><option>Asthma</option><option>Pneumonia</option>");
+    $('#a2').append("<option selected disabled>     </option><option>Bronchitis</option><option>Tuberculosis</option><option>Asthma</option><option>Pneumonia</option>");
+    $('#a3').append("<option selected disabled>     </option><option>Bronchitis</option><option>Tuberculosis</option><option>Asthma</option><option>Pneumonia</option>");
+    $('#a4').append("<option selected disabled>     </option><option>Bronchitis</option><option>Tuberculosis</option><option>Asthma</option><option>Pneumonia</option>");
+
+}
+
+function solve() {
+$('select').css("border",'2px solid green');
+$("#submit").css("pointer-events", "none");
+$('#a1').val('Asthma');
+$('#a2').val('Bronchitis');
+$('#a3').val('Pneumonia');
+$('#a4').val('Tuberculosis');
+}
+</script>
+
+
+</body>
+</html>
