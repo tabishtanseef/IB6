@@ -40,35 +40,7 @@ margin-top:20px;
 font-size:18px;
  font-weight: 450;
 }
-#block {
-  opacity:0;
-  transition:opacity 1s ease-in;*
-    -webkit-transition: opacity 1s  ease-in;
-       -moz-transition: opacity 1s  ease-in;
-         -o-transition: opacity 1s  ease-in;
-}
-#block.show {
-  opacity:1;
-}
 
-
-#block {
-    opacity: 0;
-}
-#blocks {
-  opacity:0;
-  transition:opacity 1s ease-in;*
-    -webkit-transition: opacity 1s  ease-in;
-       -moz-transition: opacity 1s  ease-in;
-         -o-transition: opacity 1s  ease-in;
-}
-#blocks.show {
-  opacity:1;
-}
-
-#blocks {
-    opacity: 0;
-}
 .block {
     display: block;
     width: 60%;
@@ -107,7 +79,7 @@ background:#70c5c2;
 </style>
 </head>
 <body>
-<div id="block" class="container-fluid tab1">
+<div id="" class="container-fluid tab1">
 <center>
 <h3 style="font-size:24px;">Leaf and its Parts</h3>
 
@@ -270,8 +242,7 @@ $("#sol").css("pointer-events", "none");
 if(ans1=="Leaf Apex" && ans2=="Margin" && ans3=="Veins" && ans4=="Midrib"  && ans5=="Petiole" && ans6=="Axillary Bud"  && ans7=="Leaf Base" ){
   var audio = document.getElementById("audio1");
 		audio.play();
-		var $block = $("#block");
-		$block.toggleClass('show');
+		
 		var $blocks = $("#blocks");
 		$blocks.toggleClass('show');
 		setInterval(function(){ $('#block').addClass('hidden'); 
