@@ -107,7 +107,11 @@ color:white;
 	}
 </style>
 </head>
-<body id="block">
+<body>
+	<div class="flash">
+		<img src="flash1.png" style="width:100%; height:100%;" >
+		</div>
+<div class="imp hidden">	
 <nav class="navbar navbar-expand-sm bg-info navbar-dark">
   <ul class="navbar-nav">
     <li class="nav-item active">
@@ -151,7 +155,25 @@ color:white;
 	
 	</center>
 </div>
+</div>
+<script>
+	var currentTime =0;
 
-
+function updateCurrentTime(){
+currentTime++;
+console.log(currentTime);
+	if(currentTime==4){
+		$('.imp').removeClass('hidden')
+		$('.flash').addClass('hidden')
+	}
+}
+	window.onload = function() {
+	updateCurrentTime();
+    setInterval(function(){
+		updateCurrentTime();
+	},1000);
+	}
+	
+	</script>
 </body>
 </html>
